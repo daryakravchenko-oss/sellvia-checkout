@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Local dev tooling & agent config (not part of the deliverable)
+.claude/
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
