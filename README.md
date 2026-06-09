@@ -40,14 +40,15 @@ trial ends. Apple/Google Pay use the same flow via the Payment Request Button.
 
 ## ⚠ Before you go live (BLOCKERS)
 
-1. **Confirm every price/term with finance & legal.** `was: 1199`, `$39/mo`, `$19/mo`, the `$40`
-   ad credit and the `$58` first charge are **placeholders**. Showing a wrong price is worse than
+1. **Confirm every price/term with finance & legal.** `was: 1199`, `$39/mo`, the `$40`
+   ad credit and the `$39` first charge are **placeholders**. Showing a wrong price is worse than
    showing none.
-2. **Decide the footwear-pack billing model.** It is configured as **$19/mo recurring**. If the ad
-   sold a *free* footwear bundle, a recurring charge is a mismatch in the opposite direction and a
-   chargeback risk. Options: free bonus (`recurring: 0`), one-time, or monthly.
+2. **Footwear pack is now a free bonus** (`recurring: 0`), so the only post-trial charge is Sellvia
+   Pro at **$39/mo** – the standard plan price. Confirm with finance the pack is genuinely free; if
+   it should be one-time or monthly instead, set `recurring` in `assets/config.js`.
 3. **Wire a real backend** for `/create-setup-intent` and verify the post-trial charge job.
-4. **Replace placeholder copy** (testimonial, Trustpilot count) with approved, truthful figures.
+4. **Award badges** in the sidebar load from Sellvia's CDN (Forbes, Entrepreneur, Inc., G2 ×2).
+   Confirm these are current and approved for use on the checkout.
 
 ## Performance notes (the #1 audit finding)
 
@@ -72,17 +73,16 @@ why:
 | 1 | **Order summary** (collapsible) | First thing after the hero: shows the *footwear bundle* (matches the ad) and anchors **$0 today** — kills the "why a card if it's free?" fear immediately. Collapsed by default so the form stays reachable; tap to expand the full breakdown. |
 | 2 | **Account** (express + email) | Apple/Google Pay one-tap path is high on the page for high-intent users; then contact details. |
 | 3 | **Payment** | Card details, with the "you won't be charged today" reassurance attached. |
-| 4 | **CTA** | The ask, with the $0-today / $58-on-date recap right above it. |
+| 4 | **CTA** | The ask, with the $0-today / $39-on-date recap right above it. |
 | 5 | **Guarantee** | Cancellation reassurance *immediately under the button*, where doubt peaks. |
-| 6 | **Social proof** | Trustpilot + a testimonial about trial transparency, at the decision point. |
-| 7 | **FAQ** | Objection handling last — for the undecided, doesn't block the ready-to-buy. |
+| 6 | **Awards** | Recognition badges (Forbes, Entrepreneur, Inc., G2 ×2) in one row, at the decision point. |
 
-A **sticky bottom CTA** ("$0 today / $58 on <date> — Start free trial") stays visible the whole
+A **sticky bottom CTA** ("$0 today / $39 on <date> – Start free trial") stays visible the whole
 scroll, so the conversion action is always one tap away. Logic preserved: nothing chargeable is
 hidden, the recurring terms travel with the summary and the consent checkboxes.
 
 ## Accessibility
 
-Semantic landmarks, labelled inputs, `aria-expanded` on FAQ/summary toggles, native `<select>` for
+Semantic landmarks, labelled inputs, `aria-expanded` on the summary toggle, native `<select>` for
 the country code (great keyboard + mobile UX), visible focus rings, `prefers-reduced-motion`
 support, valid `<!DOCTYPE>` and a zoom-friendly viewport (no `user-scalable=no`).

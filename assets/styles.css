@@ -82,7 +82,7 @@ img { max-width: 100%; }
 .col-side { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 16px; }
 
 /* ─── CARDS ─── */
-.card, .cta-card, .summary-card, .proof-card, .faq-list {
+.card, .cta-card, .summary-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
 }
 .card { padding: 26px; }
@@ -217,36 +217,10 @@ img { max-width: 100%; }
 .guarantee-text { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
 .guarantee-text strong { color: var(--ink); }
 
-.proof-card { padding: 20px; }
-.tp-logo { font-size: 13px; font-weight: 700; color: #00B67A; letter-spacing: -.3px; }
-.tp-stars { display: inline-flex; background: #00B67A; padding: 2px; border-radius: 2px; gap: 1px; }
-.tp-star { width: 17px; height: 17px; background: #fff; display: flex; align-items: center; justify-content: center; }
-.tp-star svg { fill: #00B67A; width: 13px; height: 13px; }
-.tp-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
-.tp-score-num { font-size: 15px; font-weight: 700; }
-.tp-meta { font-size: 12px; color: var(--ink-mute); margin-top: 4px; }
-.testimonial { padding: 16px 18px; background: var(--blue-soft); border-radius: var(--radius-sm); margin-top: 16px; }
-.testimonial-text { font-size: 14px; line-height: 1.55; margin-bottom: 12px; font-style: italic; }
-.testimonial-author { display: flex; align-items: center; gap: 10px; }
-.testimonial-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--amber), #F8C45E); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; flex-shrink: 0; }
-.testimonial-name { font-size: 13px; font-weight: 700; }
-.testimonial-role { font-size: 12px; color: var(--ink-mute); }
-
-/* ─── FAQ ─── */
-.faq-card { margin-top: 32px; }
-.faq-title { font-size: 26px; letter-spacing: -.6px; margin-bottom: 4px; text-align: center; font-weight: 800; }
-.faq-sub { text-align: center; font-size: 14px; color: var(--ink-mute); margin-bottom: 22px; }
-.faq-list { overflow: hidden; }
-.faq-item { border-bottom: 1px solid var(--line); }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { width: 100%; background: none; border: none; text-align: left; padding: 18px 22px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.faq-q-text { flex: 1; min-width: 0; }
-.faq-q:hover { background: var(--bg); }
-.faq-q .chevron { width: 20px; height: 20px; transition: transform .2s var(--ease); color: var(--ink-mute); flex-shrink: 0; }
-.faq-item.open .chevron { transform: rotate(180deg); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s var(--ease); }
-.faq-item.open .faq-a { max-height: 420px; }
-.faq-a-inner { padding: 0 22px 20px; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+/* ─── AWARDS / RECOGNITION BAND (dark, above footer) ─── */
+.badges-band { background: #1B2236; padding: 40px 24px; }
+.badges-band-inner { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 44px; }
+.band-badge { height: 92px; width: auto; max-width: 100%; object-fit: contain; }
 
 /* ─── FOOTER ─── */
 .site-footer { border-top: 1px solid var(--line); background: var(--surface); padding: 26px 0; margin-top: 36px; }
@@ -265,7 +239,7 @@ img { max-width: 100%; }
 /* ===========================================================================
    RESPONSIVE — at <=900px the two columns collapse into ONE deliberately
    ordered stream. `display:contents` lets the summary (right column) jump
-   above the form, and proof/guarantee sit right next to the CTA.
+   above the form, and awards/guarantee sit right next to the CTA.
    Order rationale is documented in README.md.
    =========================================================================== */
 @media (max-width: 900px) {
@@ -278,8 +252,6 @@ img { max-width: 100%; }
   #payment-card  { order: 3; }   /* card details                              */
   #cta-card      { order: 4; }   /* the ask                                   */
   #guarantee     { order: 5; }   /* reassurance, right under the button       */
-  #proof         { order: 6; }   /* social proof at the decision point        */
-  #faq-card      { order: 7; margin-top: 8px; } /* objections last            */
 
   /* collapsible summary on mobile */
   .summary-card .summary-head { display: none; }
@@ -310,6 +282,9 @@ img { max-width: 100%; }
   .card { padding: 20px; }
   .steps { display: none; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .badges-band { padding: 28px 16px; }
+  .badges-band-inner { gap: 22px; }
+  .band-badge { height: 60px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

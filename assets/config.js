@@ -27,13 +27,12 @@ window.SELLVIA_CONFIG = {
    *   recurring - charged monthly AFTER the trial (0 = free, never charged)
    *   was       - original value for the struck-through price (null = none)
    *
-   *  Confirm the FOOTWEAR PACK billing model: free bonus / one-time / monthly?
-   *    It is configured as $19/mo below ONLY as a placeholder. If the ad sold a
-   *    *free* footwear bundle, turning it into a recurring charge is a mismatch. */
+   *  FOOTWEAR PACK is a FREE bonus bundle (recurring: 0) so the only recurring
+   *    charge after the trial is Sellvia Pro at $39/mo — the standard plan price. */
   items: [
     { name: "Turnkey online store",     was: 1199, today: 0, recurring: 0,  badge: "Included", note: "One-time setup · no recurring charge" },
     { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · no separate charge" },
     { name: "Sellvia Pro subscription", was: null, today: 0, recurring: 39, badge: null,       note: null },
-    { name: "Footwear product pack",    was: null, today: 0, recurring: 19, badge: null,       note: null, aside: "cancel separately if not needed" }
+    { name: "Footwear product pack",    was: null, today: 0, recurring: 0,  badge: "Bonus",    note: "Free bonus bundle · no recurring charge" }
   ]
 };

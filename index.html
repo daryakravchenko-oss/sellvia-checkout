@@ -124,7 +124,7 @@
 
         <div class="trust-strip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <div><strong>You will NOT be charged today.</strong> Trial ends <span data-bind="trialEndShort"></span> — cancel before then for <span data-bind="todayTotal"></span>.</div>
+          <div><strong>You will NOT be charged today.</strong> Your card is only saved for after the free trial — cancel anytime before then.</div>
         </div>
       </section>
 
@@ -153,42 +153,6 @@
         </div>
         <p class="field-error" data-error="consents"></p>
         <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-      </section>
-
-      <!-- FAQ -->
-      <section class="faq-card" id="faq-card">
-        <h2 class="faq-title">Common questions before you start</h2>
-        <p class="faq-sub">Answers from people who've been through this exact checkout.</p>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span class="faq-q-text">What exactly will I be charged on <span data-bind="trialEndShort"></span>?</span>
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a"><div class="faq-a-inner">On <strong><span data-bind="trialEndLong"></span></strong> we'll charge <strong><span data-bind="firstChargeTotal"></span></strong> — the exact breakdown is in your order summary. You'll get an email reminder <strong>3 days before</strong>.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span class="faq-q-text">How do I cancel my trial?</span>
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a"><div class="faq-a-inner">In your dashboard: <strong>Settings → Subscription → Cancel</strong> — one click, no questions. Cancel before <strong><span data-bind="trialEndShort"></span></strong> and you owe <strong>nothing</strong>.</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span class="faq-q-text">Can I use my own domain name?</span>
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a"><div class="faq-a-inner">Yes. After signup you can keep a free Sellvia subdomain or connect your own domain (1–2 business days after you point your DNS).</div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">
-              <span class="faq-q-text">What if I don't make sales during the trial?</span>
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-a"><div class="faq-a-inner">That's normal in week one. Your <span data-bind="adCredit"></span> ad credit and a personal manager help you optimise. Not for you? Cancel before <strong><span data-bind="trialEndShort"></span></strong> — no charge.</div></div>
-          </div>
-        </div>
       </section>
 
     </div><!-- /col-main -->
@@ -228,7 +192,7 @@
             <div class="next-charge">
               <div>
                 <span class="label">First charge on <span data-bind="trialEndLong"></span></span>
-                <span class="date">then <span data-bind="firstChargeTotalShort"></span>/mo · cancel anytime</span>
+                <span class="date">billed monthly · cancel anytime</span>
               </div>
               <span class="amount" data-bind="firstChargeTotal"></span>
             </div>
@@ -240,37 +204,24 @@
         <div class="guarantee-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
-        <div class="guarantee-text"><strong>No-questions-asked cancellation.</strong> Cancel anytime before <strong><span data-bind="trialEndShort"></span></strong> in your dashboard — no charges, no calls.</div>
+        <div class="guarantee-text"><strong>No-questions-asked cancellation.</strong> Cancel anytime before your trial ends in your dashboard — no charges, no calls.</div>
       </div>
-
-      <section class="proof-card" id="proof">
-        <div class="tp-logo">★ Trustpilot</div>
-        <div class="tp-row">
-          <span class="tp-stars">
-            <span class="tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></span>
-            <span class="tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></span>
-            <span class="tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></span>
-            <span class="tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></span>
-            <span class="tp-star"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></span>
-          </span>
-          <span class="tp-score-num">4.6</span>
-        </div>
-        <div class="tp-meta">Based on 1,115 verified reviews</div>
-        <div class="testimonial">
-          <p class="testimonial-text">"I was skeptical about the free trial. But Sellvia showed me the exact charge date and amount upfront. Cancelled day 11 with zero hassle, came back two months later and stayed."</p>
-          <div class="testimonial-author">
-            <span class="testimonial-avatar">M</span>
-            <span>
-              <span class="testimonial-name">Maria T.</span><br>
-              <span class="testimonial-role">Verified store owner · Austin, TX</span>
-            </span>
-          </div>
-        </div>
-      </section>
 
     </aside><!-- /col-side -->
   </form>
 </main>
+
+<!-- ─── AWARDS / RECOGNITION BAND (above footer) ─── -->
+<section class="badges-band" aria-label="Awards and recognition">
+  <div class="badges-band-inner">
+    <img class="band-badge" src="img/forbes.svg" alt="Forbes Communications Council – Official Member">
+    <img class="band-badge" src="img/entrepreneur.svg" alt="Entrepreneur Leadership Network 2026">
+    <img class="band-badge" src="img/inc-5000.svg" alt="Inc. 5000 – No. 1818">
+    <img class="band-badge" src="img/g2-commerce.svg" alt="G2 Best Software 2026 – Top 50 Commerce Products">
+    <img class="band-badge" src="img/g2-emea.svg" alt="G2 Best Software 2026 – Top 50 EMEA">
+    <img class="band-badge" src="img/smartcustomer.svg" alt="924 Verified Reviews – SmartCustomer">
+  </div>
+</section>
 
 <!-- ─── FOOTER ─── -->
 <footer class="site-footer">
@@ -280,7 +231,6 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         SSL
       </span>
-      <span class="footer-badge">G2 Verified</span>
       <span class="footer-badge">PCI Compliant</span>
       <span class="footer-badge">Stripe Powered</span>
     </div>

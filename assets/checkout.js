@@ -118,14 +118,6 @@
     });
   })();
 
-  /* ---------- FAQ accordion ---------- */
-  $all(".faq-q").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var open = btn.closest(".faq-item").classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-  });
-
   /* ---------- mobile collapsible summary ---------- */
   (function () {
     var card = $("#summary"), btn = $("#summary-toggle");
