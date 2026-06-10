@@ -21,17 +21,6 @@
     <a href="https://sellvia.com" class="brand" aria-label="Sellvia">
       <img src="https://sellvia.com/wp-content/themes/sellvia/img/main/logo.png" alt="Sellvia" class="brand-logo" width="120" height="30">
     </a>
-    <nav class="steps" aria-label="Checkout steps">
-      <span class="step active"><span class="step-dot">1</span><span>Account</span></span>
-      <span class="step-line"></span>
-      <span class="step"><span class="step-dot">2</span><span>Preferences</span></span>
-      <span class="step-line"></span>
-      <span class="step"><span class="step-dot">3</span><span>Your store</span></span>
-    </nav>
-    <a href="mailto:support@sellvia.com" class="help-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-      Need help?
-    </a>
   </div>
 </header>
 
@@ -39,7 +28,7 @@
 
   <!-- ─── HERO ─── -->
   <div class="hero">
-    <div class="hero-eyebrow"><span data-bind="trialDays"></span> days free · <span data-bind="todayTotal"></span> today · Cancel anytime.</div>
+    <div class="hero-eyebrow"><span data-bind="trialDays"></span> days free · <span data-bind="todayTotal"></span> today · Cancel anytime</div>
     <h1>Launch <em>your online business without spending a cent. Start here.</em></h1>
   </div>
 
@@ -189,9 +178,7 @@
         <div class="summary-body" id="summary-body">
           <div class="line-items" id="line-items"><!-- rendered by checkout.js --></div>
           <div class="summary-totals">
-            <div class="total-row"><span class="label">Subtotal</span><span class="amount" data-bind="todayTotal"></span></div>
-            <div class="total-row"><span class="label">Tax</span><span class="amount">$0.00</span></div>
-            <div class="total-row primary"><span class="label">Charged today</span><span class="amount" data-bind="todayTotal"></span></div>
+            <div class="total-row primary"><span class="label">Charged today</span><span class="amount" data-bind="todayTotalCents"></span></div>
             <div class="next-charge">
               <div>
                 <span class="label">First charge on <span data-bind="trialEndLong"></span></span>
@@ -243,13 +230,7 @@
 
 <!-- ─── MOBILE STICKY CTA ─── -->
 <div class="mobile-sticky">
-  <div class="mobile-sticky-row">
-    <div class="mobile-sticky-info">
-      <strong><span data-bind="todayTotal"></span> today</strong>
-      <span data-bind="firstChargeTotalShort"></span> on <span data-bind="trialEndShort"></span>
-    </div>
-    <button class="cta-btn" type="button" id="sticky-cta-btn">Start free trial →</button>
-  </div>
+  <button class="cta-btn" type="button" id="sticky-cta-btn">Start my 14-day free trial</button>
 </div>
 
 </body>
