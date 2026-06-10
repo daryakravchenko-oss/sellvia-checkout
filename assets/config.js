@@ -30,9 +30,9 @@ window.SELLVIA_CONFIG = {
    *  FOOTWEAR PACK is a FREE bonus bundle (recurring: 0) so the only recurring
    *    charge after the trial is Sellvia Pro at $39/mo — the standard plan price. */
   items: [
-    { name: "Turnkey online store",     was: null, today: 0, recurring: 0,  badge: "Included", note: "One-time setup · no recurring charge" },
-    { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · no separate charge" },
+    { name: "Turnkey online store",     was: null, today: 0, recurring: 0,  badge: "Included", note: "One-time setup + Lifetime tech support" },
+    { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · No separate charge" },
     { name: "Sellvia Pro subscription", was: null, today: 0, recurring: 39, badge: null,       note: null },
-    { name: "Footwear product pack",    was: null, today: 0, recurring: 0,  badge: "Bonus",    note: "Free bonus bundle · no recurring charge" }
+    { name: "Footwear product pack",    was: null, today: 0, recurring: 0,  badge: "Bonus",    note: "Free bonus · No recurring charge" }
   ]
 };
