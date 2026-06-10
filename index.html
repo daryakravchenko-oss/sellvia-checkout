@@ -39,9 +39,26 @@
 
   <!-- ─── HERO ─── -->
   <div class="hero">
-    <div class="hero-eyebrow"><span data-bind="trialDays"></span> days free · <span data-bind="todayTotal"></span> today · cancel anytime</div>
+    <div class="hero-eyebrow"><span data-bind="trialDays"></span> days free · <span data-bind="todayTotal"></span> today · Cancel anytime.</div>
     <h1>Launch <em>your online business without spending a cent. Start here.</em></h1>
-    <p class="hero-sub">We build it, stock it with products people buy, and set up your ads with your free <span data-bind="adCredit"></span> credit – you just start.</p>
+  </div>
+
+  <!-- ─── SOCIAL PROOF · scale (real figures from Sellvia) ─── -->
+  <div class="proofbar" aria-label="Sellvia by the numbers">
+    <div class="proof-stat">
+      <span class="proof-num">1.5M+</span>
+      <span class="proof-label">stores launched</span>
+    </div>
+    <span class="proof-div" aria-hidden="true"></span>
+    <div class="proof-stat">
+      <span class="proof-num">$1.5B+</span>
+      <span class="proof-label">earned by store owners</span>
+    </div>
+    <span class="proof-div" aria-hidden="true"></span>
+    <div class="proof-stat">
+      <span class="proof-num">2.1M+</span>
+      <span class="proof-label">people started here</span>
+    </div>
   </div>
 
   <!-- ─── FORM (two columns on desktop, single ordered stream on mobile) ─── -->
@@ -121,12 +138,11 @@
         <button type="submit" id="submit-btn" class="cta-btn" data-label="Start my 14-day free trial">
           <span class="spinner" aria-hidden="true"></span>
           <span class="btn-label">Start my 14-day free trial</span>
-          <span class="charge-note">· <span data-bind="todayTotal"></span> today</span>
         </button>
         <p class="cta-aside">
           <span class="strong"><span data-bind="todayTotal"></span> today.</span>
           Next charge of <span class="strong"><span data-bind="firstChargeTotal"></span></span> on <span class="strong"><span data-bind="trialEndLong"></span></span>.<br>
-          Email reminder 3 days before · cancel in 1 click from your dashboard.
+          Cancel anytime.
         </p>
 
         <div class="consents">
@@ -136,7 +152,7 @@
           </label>
           <label class="consent">
             <input type="checkbox" required checked>
-            <span>I understand my trial ends <strong><span data-bind="trialEndLong"></span></strong>, then I'll be charged <strong><span data-bind="firstChargeTotal"></span>/mo</strong> (Sellvia Pro + any add-ons in the summary) until I cancel. <a href="#">How to cancel →</a></span>
+            <span>I agree to auto-renewal: <span data-bind="trialDays"></span>-day free trial, then <span data-bind="firstChargeTotalShort"></span>/month until canceled. Cancel instantly via dashboard or contact <a href="mailto:support@sellvia.com">support@sellvia.com</a>.</span>
           </label>
         </div>
         <p class="field-error" data-error="consents"></p>
@@ -163,7 +179,6 @@
         <div class="summary-head">
           <div class="summary-head-row">
             <span class="summary-title">Your order</span>
-            <a href="#" class="edit-link">Edit</a>
           </div>
           <span class="summary-eyebrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
