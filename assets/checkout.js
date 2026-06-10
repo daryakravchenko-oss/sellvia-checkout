@@ -204,7 +204,6 @@
     mountDemo("#card-number", "cc-number", "1234 1234 1234 1234", fmtCard, 19);
     mountDemo("#card-expiry", "cc-exp",    "MM / YY",             fmtExp,  7);
     mountDemo("#card-cvc",    "cc-csc",    "CVC",                 fmtCvc,  4);
-    var note = $("#demo-note"); if (note) note.hidden = false;
   }
   function mountDemo(sel, ac, ph, fmt, max) {
     var box = $(sel); if (!box) return;

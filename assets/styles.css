@@ -86,7 +86,7 @@ img { max-width: 100%; }
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
 }
 .card { padding: 26px; }
-.card + .card { margin-top: 18px; }
+.card + .card, .payment-card + .cta-card { margin-top: 16px; }
 .section-label {
   font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
   color: var(--ink-mute); margin-bottom: 12px;
@@ -140,8 +140,6 @@ img { max-width: 100%; }
   border-radius: var(--radius-sm); margin-top: 16px; font-size: 13px; color: var(--blue); font-weight: 500;
 }
 .trust-strip svg { width: 18px; height: 18px; flex-shrink: 0; }
-.demo-note { font-size: 12px; color: #8a6d1f; background: #FEF5E5; border: 1px solid #F0D5A8; border-radius: var(--radius-sm); padding: 8px 12px; margin-top: 12px; }
-.demo-note code { font-family: ui-monospace, monospace; }
 
 /* ─── CTA ─── */
 .cta-card { padding: 22px; }
