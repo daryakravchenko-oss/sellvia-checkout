@@ -64,7 +64,7 @@ img { max-width: 100%; }
 .checkout-shell { max-width: var(--maxw); margin: 0 auto; padding: 48px 24px 96px; }
 .hero { text-align: center; max-width: 720px; margin: 0 auto 48px; }
 .hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; align-items: center; gap: 4px;
   font-size: 13px; font-weight: 600; color: var(--blue); background: var(--blue-soft);
   padding: 7px 14px; border-radius: 100px; margin-bottom: 20px;
 }
@@ -76,6 +76,22 @@ img { max-width: 100%; }
 .hero h1 { font-size: 50px; line-height: 1.06; letter-spacing: -1.6px; font-weight: 800; margin-bottom: 14px; }
 .hero h1 em { font-style: normal; color: var(--blue); }
 .hero-sub { font-size: 17px; color: var(--ink-soft); max-width: 540px; margin: 0 auto; }
+
+/* ─── SOCIAL PROOF BAR — scale figures under hero (theme-aware via vars) ─── */
+.proofbar {
+  max-width: 660px; margin: -14px auto 46px;
+  display: flex; align-items: center; justify-content: center; gap: clamp(18px, 5vw, 48px);
+}
+.proof-stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.proof-num { font-size: 30px; font-weight: 800; letter-spacing: -1.2px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.proof-label { font-size: 13px; color: var(--ink-mute); font-weight: 500; white-space: nowrap; }
+.proof-div { width: 1px; height: 36px; background: var(--line); flex-shrink: 0; }
+@media (max-width: 768px) {
+  .proofbar { gap: 12px; margin: -2px auto 26px; max-width: 100%; }
+  .proof-num { font-size: 20px; letter-spacing: -.6px; }
+  .proof-label { font-size: 10.5px; white-space: normal; line-height: 1.25; text-align: center; }
+  .proof-div { height: 30px; }
+}
 
 /* ─── COLUMNS ─── */
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 32px; align-items: start; }
