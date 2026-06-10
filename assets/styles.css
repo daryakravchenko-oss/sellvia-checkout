@@ -129,7 +129,12 @@ img { max-width: 100%; }
 
 /* Phone with compact country select */
 .phone-wrap { display: grid; grid-template-columns: 104px 1fr; gap: 8px; }
-.phone-wrap select { padding: 13px 8px; font-variant-numeric: tabular-nums; }
+.phone-wrap select {
+  padding: 13px 26px 13px 8px; font-variant-numeric: tabular-nums;
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237A7E85' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center; background-size: 12px;
+}
 
 /* Payment method icons (decorative trust) */
 .payment-icons { display: flex; align-items: center; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
