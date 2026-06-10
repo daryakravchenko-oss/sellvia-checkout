@@ -218,7 +218,7 @@ img { max-width: 100%; }
 .guarantee-text strong { color: var(--ink); }
 
 /* ─── AWARDS / RECOGNITION BAND (dark, above footer) ─── */
-.badges-band { background: #1B2236; padding: 40px 24px; }
+.badges-band { background: var(--bg); padding: 40px 24px; }
 .badges-band-inner { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 44px; }
 .band-badge { height: 92px; width: auto; max-width: 100%; object-fit: contain; }
 
