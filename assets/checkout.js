@@ -67,7 +67,7 @@
 
       var price = document.createElement("div"); price.className = "line-price";
       if (it.was) { var w = document.createElement("span"); w.className = "was"; w.textContent = money(it.was); price.appendChild(w); }
-      price.appendChild(document.createTextNode(it.today === 0 ? (it.recurring ? money(0, true) : "FREE") : money(it.today, true)));
+      price.appendChild(document.createTextNode(it.priceLabel != null ? it.priceLabel : (it.today === 0 ? (it.recurring ? money(0, true) : "FREE") : money(it.today, true))));
 
       var sub = document.createElement("div"); sub.className = "line-renewal";
       if (it.recurring > 0) {
@@ -187,7 +187,7 @@
       });
       var prButton = elements.create("paymentRequestButton", { paymentRequest: pr });
       pr.canMakePayment().then(function (res) {
-        if (res) { prButton.mount("#express-checkout"); var w = $("#express-wrap"); if (w) w.hidden = false; }
+        if (res) { prButton.mount("#express-checkout"); var w = $("#express-wrap"); if (w) w.hidden = false; var g = $("#gpay-demo"); if (g) g.hidden = true; }
       });
       pr.on("paymentmethod", function (ev) {
         createSetupIntent(ev.payerEmail).then(function (cs) {
@@ -202,9 +202,16 @@
 
   /* DEMO fallback — styled inputs so the page is fully viewable without a key */
   function initDemo() {
-    mountDemo("#card-number", "cc-number", "1234 1234 1234 1234", fmtCard, 19);
-    mountDemo("#card-expiry", "cc-exp",    "MM / YY",             fmtExp,  7);
-    mountDemo("#card-cvc",    "cc-csc",    "CVC",                 fmtCvc,  4);
+    mountDemo("#card-number", "cc-number", "Card number", fmtCard, 19);
+    mountDemo("#card-expiry", "cc-exp",    "MM / YY",     fmtExp,  7);
+    mountDemo("#card-cvc",    "cc-csc",    "CVC",         fmtCvc,  4);
+    /* show the express (Google/Apple Pay) row with a demo button so the layout matches production */
+    var ew = $("#express-wrap"); if (ew) ew.hidden = false;
+    var g = $("#gpay-demo");
+    if (g) g.addEventListener("click", function () {
+      var f = $("#checkout-form");
+      if (f) { if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true })); }
+    });
   }
   function mountDemo(sel, ac, ph, fmt, max) {
     var box = $(sel); if (!box) return;
