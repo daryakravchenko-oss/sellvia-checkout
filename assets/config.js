@@ -19,7 +19,7 @@ window.SELLVIA_CONFIG = {
   currency: "USD",
   currencySymbol: "$",
   trialDays: 14,
-  bundleName: "Free Ecommerce Store + Footwear Bundle",
+  bundleName: "Free ONLINE Store + Footwear Bundle",
   adCredit: 40,                    // "$40 ad credit" hero claim — must be true
 
   /* Order-summary line items.
@@ -30,7 +30,7 @@ window.SELLVIA_CONFIG = {
    *  FOOTWEAR PACK is a FREE bonus bundle (recurring: 0) so the only recurring
    *    charge after the trial is Sellvia Pro at $39/mo — the standard plan price. */
   items: [
-    { name: "Turnkey online store",     was: 1199, today: 0, recurring: 0,  badge: "Included", note: "One-time setup · no recurring charge" },
+    { name: "Turnkey online store",     was: null, today: 0, recurring: 0,  badge: "Included", note: "One-time setup · no recurring charge" },
     { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · no separate charge" },
     { name: "Sellvia Pro subscription", was: null, today: 0, recurring: 39, badge: null,       note: null },
     { name: "Footwear product pack",    was: null, today: 0, recurring: 0,  badge: "Bonus",    note: "Free bonus bundle · no recurring charge" }
