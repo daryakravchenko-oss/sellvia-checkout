@@ -290,3 +290,29 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+/* ===========================================================================
+   v3: yellow accents + footer awards layout & scroll-reveal (ported from v2,
+   keeping the light v3 colors and badges).
+   =========================================================================== */
+:root { --ease-out: cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* button-yellow for heading, bundle eyebrow (+ check), and charged-today $0 */
+.hero h1 em,
+.summary-eyebrow,
+.total-row.primary .amount,
+.summary-toggle .st-today { color: var(--yellow); }
+
+/* awards row sits at the top of the footer, transparent on the footer surface */
+.badges-band { background: transparent; padding: 0 0 28px; }
+
+/* badges fade + rise in when their footer row scrolls into view (checkout.js adds .in) */
+.band-badge { opacity: 0; transform: translateY(20px); }
+@media (scripting: none) { .band-badge { opacity: 1; transform: none; } }
+.badges-band.in .band-badge { opacity: 1; transform: none; transition: opacity .55s var(--ease-out), transform .55s var(--ease-out); }
+.badges-band.in .band-badge:nth-child(1) { transition-delay: .05s; }
+.badges-band.in .band-badge:nth-child(2) { transition-delay: .11s; }
+.badges-band.in .band-badge:nth-child(3) { transition-delay: .17s; }
+.badges-band.in .band-badge:nth-child(4) { transition-delay: .23s; }
+.badges-band.in .band-badge:nth-child(5) { transition-delay: .29s; }
+.badges-band.in .band-badge:nth-child(6) { transition-delay: .35s; }

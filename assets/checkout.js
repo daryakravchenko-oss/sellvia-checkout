@@ -305,3 +305,14 @@
     });
   }
 })();
+
+/* v3: reveal the footer award badges when their row scrolls into view */
+(function () {
+  var band = document.querySelector(".badges-band");
+  if (!band) return;
+  if (!("IntersectionObserver" in window)) { band.classList.add("in"); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { band.classList.add("in"); io.disconnect(); } });
+  }, { threshold: 0.15 });
+  io.observe(band);
+})();
