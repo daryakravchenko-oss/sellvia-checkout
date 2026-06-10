@@ -282,7 +282,7 @@ img { max-width: 100%; }
    Order rationale is documented in README.md.
    =========================================================================== */
 @media (max-width: 900px) {
-  .cols { display: flex; flex-direction: column; gap: 16px; }
+  .cols { display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
   .col-main, .col-side { display: contents; }
 
   /* deliberate mobile order (low number = higher on screen) */
