@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Start your Sellvia online store with a 14-day free trial. $0 charged today, cancel anytime.">
+<meta name="theme-color" content="#1778CC">
+<title>Checkout – Start your free trial | Sellvia</title>
+<link rel="preconnect" href="https://js.stripe.com">
+<link rel="preconnect" href="https://api.stripe.com">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://js.stripe.com/v3/" defer></script>
+<script src="assets/config.js" defer></script>
+<script src="assets/checkout.js" defer></script>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://sellvia.com" class="brand" aria-label="Sellvia">
+      <img src="img/sellvia-logo.svg" alt="Sellvia" class="brand-logo" width="135" height="30">
+    </a>
+    <nav class="steps" aria-label="Checkout steps">
+      <span class="step active"><span class="step-dot">1</span><span>Account</span></span>
+      <span class="step-line"></span>
+      <span class="step"><span class="step-dot">2</span><span>Preferences</span></span>
+      <span class="step-line"></span>
+      <span class="step"><span class="step-dot">3</span><span>Your store</span></span>
+    </nav>
+    <a href="mailto:support@sellvia.com" class="help-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Need help?
+    </a>
+  </div>
+</header>
+
+<main class="checkout-shell">
+
+  <!-- ─── HERO ─── -->
+  <div class="hero">
+    <div class="hero-eyebrow"><span data-bind="trialDays"></span> days free · <span data-bind="todayTotal"></span> today · cancel anytime</div>
+    <h1>Your own online store, <em>built for you</em>.</h1>
+    <p class="hero-sub">We build it, stock it with products people buy, and set up your ads with your free <span data-bind="adCredit"></span> credit – you just start.</p>
+  </div>
+
+  <!-- ─── FORM (two columns on desktop, single ordered stream on mobile) ─── -->
+  <form id="checkout-form" class="cols" novalidate>
+
+    <!-- ───────── LEFT COLUMN ───────── -->
+    <div class="col-main">
+
+      <!-- Account: express checkout + contact -->
+      <section class="card" id="account-card">
+        <div id="express-wrap" hidden>
+          <div class="section-label">Express checkout</div>
+          <div id="express-checkout"></div>
+          <div class="express-divider">Or pay with card</div>
+        </div>
+
+        <div class="section-label">Your information</div>
+        <div class="field-group">
+          <div class="field">
+            <label for="email">Email <span class="optional">– we'll send your store access here</span></label>
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required>
+            <p class="field-error" data-error="email"></p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="firstname">First name <span class="optional">(optional)</span></label>
+              <input type="text" id="firstname" placeholder="Sarah" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lastname">Last name <span class="optional">(optional)</span></label>
+              <input type="text" id="lastname" placeholder="Johnson" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="optional">(optional – for your free setup call)</span></label>
+            <div class="phone-wrap">
+              <select id="phone-country" aria-label="Country calling code"></select>
+              <input type="tel" id="phone" placeholder="(555) 123-4567" autocomplete="tel-national">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment -->
+      <section class="card payment-card" id="payment-card">
+        <div class="section-label payment-head">
+          <span>Payment</span>
+          <span class="secured">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Secured by Stripe · 256-bit SSL
+          </span>
+        </div>
+
+        <div class="field-group">
+          <div class="field">
+            <label>Card number</label>
+            <div id="card-number" class="stripe-field"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Expiry</label><div id="card-expiry" class="stripe-field"></div></div>
+            <div class="field"><label>CVC</label><div id="card-cvc" class="stripe-field"></div></div>
+          </div>
+          <div class="field">
+            <label for="cardname">Name on card</label>
+            <input type="text" id="cardname" placeholder="Sarah Johnson" autocomplete="cc-name">
+          </div>
+        </div>
+        <p class="field-error" data-error="card-number"></p>
+        <p class="field-error" data-error="cardname"></p>
+
+        <div class="payment-icons">
+          <img class="pay-icon" src="img/card-visa.svg" alt="Visa">
+          <img class="pay-icon" src="img/card-mc.svg" alt="Mastercard">
+          <img class="pay-icon" src="img/card-amex.svg" alt="American Express">
+          <img class="pay-icon" src="img/card-discover.svg" alt="Discover">
+          <img class="pay-icon" src="img/card-stripe.svg" alt="Stripe">
+        </div>
+
+        <div class="trust-strip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div><strong>You will NOT be charged today.</strong> Your card is only saved for after the free trial – cancel anytime before then.</div>
+        </div>
+      </section>
+
+      <!-- CTA + consents -->
+      <section class="cta-card" id="cta-card">
+        <button type="submit" id="submit-btn" class="cta-btn" data-label="Start my 14-day free trial">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Start my 14-day free trial</span>
+          <span class="charge-note">· <span data-bind="todayTotal"></span> today</span>
+        </button>
+        <p class="cta-aside">
+          <span class="strong"><span data-bind="todayTotal"></span> today.</span>
+          Next charge of <span class="strong"><span data-bind="firstChargeTotal"></span></span> on <span class="strong"><span data-bind="trialEndLong"></span></span>.<br>
+          Email reminder 3 days before · cancel in 1 click from your dashboard.
+        </p>
+
+        <div class="consents">
+          <label class="consent">
+            <input type="checkbox" required>
+            <span>I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</span>
+          </label>
+          <label class="consent">
+            <input type="checkbox" required>
+            <span>I understand my trial ends <strong><span data-bind="trialEndLong"></span></strong>, then I'll be charged <strong><span data-bind="firstChargeTotal"></span>/mo</strong> (Sellvia Pro + any add-ons in the summary) until I cancel. <a href="#">How to cancel →</a></span>
+          </label>
+        </div>
+        <p class="field-error" data-error="consents"></p>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </section>
+
+    </div><!-- /col-main -->
+
+    <!-- ───────── RIGHT COLUMN ───────── -->
+    <aside class="col-side">
+
+      <section class="summary-card" id="summary">
+        <button class="summary-toggle" id="summary-toggle" type="button" aria-expanded="false" aria-controls="summary-body">
+          <span class="st-left">
+            <span class="st-eyebrow">Order summary</span>
+            <span class="st-bundle" data-bind="bundleName"></span>
+          </span>
+          <span class="st-right">
+            <span class="st-today" data-bind="todayTotal"></span>
+            <svg class="st-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+
+        <div class="summary-head">
+          <div class="summary-head-row">
+            <span class="summary-title">Your order</span>
+            <a href="#" class="edit-link">Edit</a>
+          </div>
+          <span class="summary-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span data-bind="bundleName"></span>
+          </span>
+        </div>
+
+        <div class="summary-body" id="summary-body">
+          <div class="line-items" id="line-items"><!-- rendered by checkout.js --></div>
+          <div class="summary-totals">
+            <div class="total-row"><span class="label">Subtotal</span><span class="amount" data-bind="todayTotal"></span></div>
+            <div class="total-row"><span class="label">Tax</span><span class="amount">$0.00</span></div>
+            <div class="total-row primary"><span class="label">Charged today</span><span class="amount" data-bind="todayTotal"></span></div>
+            <div class="next-charge">
+              <div>
+                <span class="label">First charge on <span data-bind="trialEndLong"></span></span>
+                <span class="date">billed monthly · cancel anytime</span>
+              </div>
+              <span class="amount" data-bind="firstChargeTotal"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="guarantee-strip" id="guarantee">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div class="guarantee-text"><strong>No-questions-asked cancellation.</strong> Cancel anytime before your trial ends in your dashboard – no charges, no calls.</div>
+      </div>
+
+    </aside><!-- /col-side -->
+  </form>
+</main>
+
+<!-- ─── FOOTER (awards row on top) ─── -->
+<footer class="site-footer">
+  <section class="badges-band" aria-label="Awards and recognition">
+    <div class="badges-band-inner">
+      <img class="band-badge" src="img/forbes.svg" alt="Forbes Communications Council – Official Member">
+      <img class="band-badge" src="img/entrepreneur.svg" alt="Entrepreneur Leadership Network 2026">
+      <img class="band-badge" src="img/Inc.svg" alt="Inc. 5000 – No. 1818">
+      <img class="band-badge" src="img/g2-commerce.svg" alt="G2 Best Software 2026 – Top 50 Commerce Products">
+      <img class="band-badge" src="img/g2-emea.svg" alt="G2 Best Software 2026 – Top 50 EMEA">
+      <img class="band-badge" src="img/smartcustomer.svg" alt="924 Verified Reviews – SmartCustomer">
+    </div>
+  </section>
+  <div class="footer-inner">
+    <div class="footer-trust">
+      <span class="footer-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        SSL
+      </span>
+      <span class="footer-badge">PCI Compliant</span>
+      <span class="footer-badge">Stripe Powered</span>
+    </div>
+    <div class="footer-copy">© 2026 Sellvia LLC · 2 Park Plaza Ste 680, Irvine, CA 92614</div>
+  </div>
+</footer>
+
+<!-- ─── MOBILE STICKY CTA ─── -->
+<div class="mobile-sticky">
+  <div class="mobile-sticky-row">
+    <div class="mobile-sticky-info">
+      <strong><span data-bind="todayTotal"></span> today</strong>
+      <span data-bind="firstChargeTotalShort"></span> on <span data-bind="trialEndShort"></span>
+    </div>
+    <button class="cta-btn" type="button" id="sticky-cta-btn">Start free trial →</button>
+  </div>
+</div>
+
+</body>
+</html>
