@@ -37,6 +37,7 @@
   var BIND = {
     trialDays: String(trialDays),
     todayTotal: money(todayTotal),
+    todayTotalCents: money(todayTotal, true),
     firstChargeTotal: money(firstChargeTotal, true),
     firstChargeTotalShort: money(firstChargeTotal),
     trialEndLong: trialEndLong,
