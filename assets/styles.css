@@ -227,7 +227,8 @@ img { max-width: 100%; }
 .line-items { padding: 6px 0; }
 .line-item { padding: 16px 22px; display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; border-bottom: 1px dashed var(--line); }
 .line-item:last-child { border-bottom: none; }
-.line-name { font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.line-name { font-size: 17px; font-weight: 600; display: flex; align-items: flex-start; gap: 8px; }
+.line-name .free-pill { margin-top: 2px; }
 .free-pill { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 3px 7px; border-radius: 4px; }
 .line-price { text-align: right; font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
 .line-price .was { color: var(--ink-mute); text-decoration: line-through; font-size: 13px; font-weight: 500; display: block; }
@@ -297,9 +298,12 @@ img { max-width: 100%; }
     background: none; border: none; cursor: pointer; padding: 18px 20px; font-family: var(--sans); text-align: left;
   }
   .summary-toggle .st-left { display: flex; flex-direction: column; gap: 4px; }
-  .summary-toggle .st-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--blue); }
+  .summary-toggle .st-eyebrow { font-size: 20px; font-weight: 700; letter-spacing: -.4px; color: var(--ink); }
   .summary-toggle .st-bundle { font-size: 12px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--blue); }
-  .summary-toggle .st-right { display: none; }
+  .summary-toggle .st-right { display: flex; align-items: center; }
+  .summary-toggle .st-today { display: none; }
+  .summary-toggle .st-chevron { display: block; width: 20px; height: 20px; color: var(--ink-mute); transition: transform .2s var(--ease); flex-shrink: 0; }
+  .summary-card.open .summary-toggle .st-chevron { transform: rotate(180deg); }
   .summary-body { max-height: none; overflow: visible; }
   .line-items { max-height: 0; overflow: hidden; padding: 0; transition: max-height .3s var(--ease); }
   .summary-card.open .line-items { max-height: 1200px; padding: 6px 0; }
