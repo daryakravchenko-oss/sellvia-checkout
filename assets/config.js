@@ -19,7 +19,7 @@ window.SELLVIA_CONFIG = {
   currency: "USD",
   currencySymbol: "$",
   trialDays: 14,
-  bundleName: "Free ONLINE Store + Footwear Bundle",
+  bundleName: "Free ONLINE Store + BRANDED FOOTWEAR BUNDLE",
   adCredit: 40,                    // "$40 ad credit" hero claim — must be true
 
   /* Order-summary line items.
@@ -34,6 +34,6 @@ window.SELLVIA_CONFIG = {
     { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · No separate charge" },
     { name: "Sellvia Pro subscription", was: null, today: 0, recurring: 39, badge: null,       note: null },
     { name: "Amazon Seller Kit",        was: null, today: 0, recurring: 0,  badge: "Bonus", note: "Free bonus · No recurring charge" },
-    { name: "Footwear Bundle",          was: null, today: 0, recurring: 0,  badge: "Bonus", note: "Free bonus · No recurring charge" }
+    { name: "Branded Footwear Bundle",  was: null, today: 0, recurring: 0,  badge: "Bonus", note: "Free bonus · No recurring charge" }
   ]
 };
