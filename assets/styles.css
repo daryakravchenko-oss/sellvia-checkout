@@ -178,9 +178,7 @@ img { max-width: 100%; }
 .shell-logo .brand-logo { height: 30px; width: auto; }
 
 /* "Or pay with card" + accepted-cards strip on one row (mirrors reference) */
-.card-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0; }
-.card-row-label { font-size: 13px; color: var(--ink-mute); font-weight: 500; white-space: nowrap; }
-.cards-strip { height: 22px; width: auto; flex-shrink: 0; }
+.cards-strip { display: block; width: 100%; max-width: 300px; height: auto; margin: 10px auto 18px; }
 
 /* Autofill chip + lock inside the card-number field (mirrors reference) */
 .card-num-field { position: relative; }
