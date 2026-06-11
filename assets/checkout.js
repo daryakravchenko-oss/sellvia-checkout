@@ -59,7 +59,8 @@
       var row = document.createElement("div"); row.className = "line-item";
 
       var name = document.createElement("div"); name.className = "line-name";
-      name.appendChild(document.createTextNode(it.name));
+      var nameText = document.createElement("span"); nameText.className = "ln-text"; nameText.textContent = it.name;
+      name.appendChild(nameText);
       if (it.badge) {
         var b = document.createElement("span"); b.className = "free-pill"; b.textContent = it.badge;
         name.appendChild(b);
@@ -69,16 +70,17 @@
       if (it.was) { var w = document.createElement("span"); w.className = "was"; w.textContent = money(it.was); price.appendChild(w); }
       price.appendChild(document.createTextNode(it.priceLabel != null ? it.priceLabel : (it.today === 0 ? (it.recurring ? money(0, true) : "FREE") : money(it.today, true))));
 
-      var sub = document.createElement("div"); sub.className = "line-renewal";
+      var sub = null;
       if (it.recurring > 0) {
+        sub = document.createElement("div"); sub.className = "line-renewal";
         sub.innerHTML = "Free for " + trialDays + " days, then <strong>" + money(it.recurring, true) +
           "/mo</strong> from <strong>" + trialEndLong + "</strong>" + (it.aside ? " <em>(" + it.aside + ")</em>" : "");
-      } else {
-        sub.className += " included";
-        sub.textContent = "✓ " + (it.note || "Included");
+      } else if (it.note) {
+        sub = document.createElement("div"); sub.className = "line-renewal included";
+        sub.textContent = "✓ " + it.note;
       }
 
-      row.appendChild(name); row.appendChild(price); row.appendChild(sub);
+      row.appendChild(name); row.appendChild(price); if (sub) row.appendChild(sub);
       wrap.appendChild(row);
     });
   })();

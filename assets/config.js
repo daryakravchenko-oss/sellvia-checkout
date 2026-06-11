@@ -33,7 +33,7 @@ window.SELLVIA_CONFIG = {
     { name: "Turnkey online store",     was: null, today: 0, recurring: 0,  badge: null,       note: "One-time setup + Lifetime tech support" },
     { name: "Hosting + SSL",            was: null, today: 0, recurring: 0,  badge: "Included", note: "Bundled with Sellvia Pro · No separate charge" },
     { name: "Sellvia Pro subscription", was: null, today: 0, recurring: 39, badge: null,       note: null },
-    { name: "Amazon Seller Kit",        was: null, today: 0, recurring: 0,  badge: "Bonus", note: "Free bonus · No recurring charge" },
-    { name: "Branded Footwear Bundle",  was: null, today: 0, recurring: 0,  badge: "Bonus", note: "Free bonus · No recurring charge" }
+    { name: "Amazon Seller Kit",        was: null, today: 0, recurring: 0,  badge: "Bonus", note: null },
+    { name: "Branded Footwear Bundle",  was: null, today: 0, recurring: 0,  badge: "Bonus", note: null }
   ]
 };

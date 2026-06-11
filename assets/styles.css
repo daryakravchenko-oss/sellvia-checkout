@@ -227,8 +227,9 @@ img { max-width: 100%; }
 .line-items { padding: 6px 0; }
 .line-item { padding: 16px 22px; display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; border-bottom: 1px dashed var(--line); }
 .line-item:last-child { border-bottom: none; }
-.line-name { font-size: 17px; font-weight: 600; display: flex; align-items: flex-start; gap: 8px; }
-.line-name .free-pill { margin-top: 2px; }
+.line-name { font-size: 17px; font-weight: 600; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.line-name .ln-text { flex: 0 1 auto; }
+.line-name .free-pill { flex: 0 0 auto; margin-top: 2px; }
 .free-pill { font-size: 10px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 3px 7px; border-radius: 4px; }
 .line-price { text-align: right; font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
 .line-price .was { color: var(--ink-mute); text-decoration: line-through; font-size: 13px; font-weight: 500; display: block; }
@@ -246,7 +247,8 @@ img { max-width: 100%; }
 .total-row.primary .amount { font-size: 30px; font-weight: 800; color: var(--blue); letter-spacing: -1px; line-height: 1; }
 .next-charge { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14px; color: var(--ink-soft); padding: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); margin-top: 14px; }
 .next-charge .date { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--ink-mute); font-weight: 600; display: block; margin-top: 3px; }
-.next-charge .amount { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.next-charge .amount { font-weight: 700; color: var(--ink-mute); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.next-charge .label { color: var(--ink-mute); }
 
 /* ─── GUARANTEE + PROOF ─── */
 .guarantee-strip { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: var(--surface); border: 1px dashed var(--blue); border-radius: var(--radius); }
